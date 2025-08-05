@@ -5,13 +5,8 @@ name: Frontend CI
 on:
   push:
     branches: [ "main" ]
-    # Only run this workflow if files inside the 'frontend' directory are changed
-    paths:
-      - 'frontend/**'
   pull_request:
     branches: [ "main" ]
-    paths:
-      - 'frontend/**'
 
 jobs:
   lint:
@@ -26,12 +21,8 @@ jobs:
         with:
           node-version: '20'
 
-      # This step now runs specifically in the './frontend' directory
       - name: Install dependencies
         run: npm ci
-        working-directory: ./frontend
 
-      # This step also runs inside the './frontend' directory
       - name: Run ESLint
         run: npm run lint
-        working-directory: ./frontend
