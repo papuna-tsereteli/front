@@ -233,7 +233,7 @@ export default function App() {
             </View>
         )}
 
-        {suggestions.length > 0 && ( // [cite: 1]
+        {suggestions.length > 0 && (
             <View style={styles.suggestionsContainer}>
               <Text style={styles.suggestionsTitle}>Suggestions</Text>
               <ScrollView horizontal showsHorizontalScrollIndicator={false}>
